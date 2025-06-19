@@ -1,17 +1,17 @@
 import './globals.css';
 import Navbar from '../components/Navbar';
-
-export const metadata = {
-  title: 'Ujjwal Bansal Blog',
-  description: 'Personal blog built with Next.js and Markdown.',
-};
+import Footer from '../components/Footer';
+import ThemeProvider from '../context/ThemeProvider';
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <div className="min-h-screen">{children}</div>
+      <body className="bg-white text-black dark:bg-black dark:text-white transition-colors">
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
