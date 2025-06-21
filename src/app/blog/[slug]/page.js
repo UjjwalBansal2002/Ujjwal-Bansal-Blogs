@@ -34,10 +34,10 @@ export default async function Page(props ) {
   const contentHtml = processedContent.toString();
 
   return (
-    <main className="max-w-3xl mx-auto p-4">
+    <main className="max-w-3xl mx-auto p-4 flex-1">
       <h1 className="text-3xl font-bold mb-2">{post.meta.title}</h1>
       <p className="text-sm text-gray-500 mb-4">{post.meta.date}</p>
-      <article dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <article className='prose prose-lg dark:prose-invert' dangerouslySetInnerHTML={{ __html: contentHtml }} />
     </main>
   );
 }
